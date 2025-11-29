@@ -1,1 +1,24 @@
-<h1>Bayo.net Home Page</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bayo.net</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<h1>Hoşgeldin - Bayo.net</h1>
+<a href="/scan">Dark Web Simülasyonu</a><br>
+<a href="/upload">CV / Dosya Yükle</a>
+
+<ul>
+{% for cv in cvs %}
+<li>→ {{ cv[1] }}
+    - <a href="{{ url_for('static', filename='../uploads/' + cv[2]) }}">Dosya</a>
+    {% if cv[3] %}
+    - <a href="{{ cv[3] }}">Link</a>
+    {% endif %}
+</li>
+{% endfor %}
+</ul>
+</body>
+</html>
+
