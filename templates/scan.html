@@ -1,1 +1,31 @@
-<h1>Bayo.net </h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dark Web Scanner - Bayo.net</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<h1>Dark Web Tarayıcı</h1>
+
+<form method="POST">
+<input type="text" name="terms" placeholder="3 kelime gir" required>
+<input type="submit" value="Tara">
+</form>
+
+{% if score %}
+<h2>Sonuçlar</h2>
+<p>Aranan: {{ terms }}</p>
+<p>Sonuç sayısı: {{ score }}</p>
+<p>Risk: {{ risk }}</p>
+<p>Alanlar:</p>
+<ul>
+{% for d in domains %}
+<li>{{ d }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+<a href="/">Ana Sayfa</a>
+</body>
+</html>
+
