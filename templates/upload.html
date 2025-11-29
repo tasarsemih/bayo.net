@@ -1,1 +1,18 @@
-<h1>Bayo.net</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CV / Dosya Yükle</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<h1>Dosya Yükle</h1>
+<form method="POST" enctype="multipart/form-data">
+<input type="text" name="name" placeholder="İsim / Kod Adı" required><br>
+<input type="file" name="file" required><br>
+<input type="url" name="link" placeholder="Harici Link (Opsiyonel)"><br>
+<input type="submit" value="Yükle">
+</form>
+<a href="/">Ana Sayfa</a>
+</body>
+</html>
+
